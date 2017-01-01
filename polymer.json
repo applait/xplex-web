@@ -1,0 +1,17 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/xplex-me.html",
+  "fragments": [
+    "src/xplex-user.html",
+    "src/xplex-404.html"
+  ],
+  "sourceGlobs": [
+    "src/**/*",
+    "images/**/*",
+    "bower.json"
+  ],
+  "includeDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+  ]
+}
