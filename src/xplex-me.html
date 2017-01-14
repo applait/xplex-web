@@ -1,124 +1,117 @@
+
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
-<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
-<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="../bower_components/app-route/app-location.html">
-<link rel="import" href="../bower_components/app-route/app-route.html">
-<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
-<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="my-icons.html">
+
+<link rel="import" href="../bower_components/app-layout/demo/sample-content.html">
 
 <dom-module id="xplex-me">
+
   <template>
+
     <style>
-      :host {
-        --app-primary-color: #4285f4;
-        --app-secondary-color: black;
-
-        display: block;
-      }
-
-      app-header {
-        color: #fff;
-        background-color: var(--app-primary-color);
-      }
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: white;
-      }
-
-      .drawer-list {
-        margin: 0 20px;
-      }
-
-      .drawer-list a {
-        display: block;
-        padding: 0 16px;
+      a {
         text-decoration: none;
-        color: var(--app-secondary-color);
-        line-height: 40px;
+        font-size: inherit;
+        color: inherit;
       }
-
-      .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
+      .toolbar {
+        @apply(--layout-horizontal);
+        @apply(--layout-justified);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.167);
+        color: #ccc;
+      }
+      .tabs {
+        height: 100%;
+        @apply(--layout-horizontal);
+      }
+      .tabs > a {
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+        transition: all 0.3s ease;
+        margin: 12px 16px 12px;
+      }
+      .tabs > a:hover {
+        color: #fff;
+      }
+      .applink {
+        background-color: #eee;
+        border-radius: 0;
+        color: #444;
+      }
+      app-header-layout {
+        background-image: url('./img/cover-2k.jpg');
+        backgrond-repeat: no-repeat;
+      }
+      header {
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+        height: calc(100vh - 64px);
+        padding: 0 16px;
+        background-size: cover;
+        color: white;
+        text-align: center;
+      }
+      header > h2 {
+        font-size: 56px;
+        font-weight: 300;
+        margin: 0;
+      }
+      header > p {
+        font-size: 32px;
+      }
+      section {
+        padding: 88px 16px;
       }
     </style>
 
-    <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+    <app-header-layout>
 
-    <app-drawer-layout fullbleed>
-      <!-- Drawer content -->
-      <app-drawer id="drawer">
-        <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="user" href="/user">User</a>
-        </iron-selector>
-      </app-drawer>
+      <app-header reveals effects="waterfall">
 
-      <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+        <app-toolbar class="toolbar">
+          <div main-title>
+            xPlex
+          </div>
+          <div class="tabs">
+            <a href="/about">About</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/faq">FAQ</a>
+            <paper-button raised class="applink">
+              Go to App
+            </paper-button>
+          </div>
+        </app-toolbar>
 
-        <app-header condenses reveals effects="waterfall">
-          <app-toolbar>
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>xPlex</div>
-          </app-toolbar>
-        </app-header>
+      </app-header>
 
-        <iron-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="404"
-            role="main">
-          <xplex-user name="user"></xplex-user>
-          <xplex-404 name="404"></xplex-404>
-        </iron-pages>
-      </app-header-layout>
-    </app-drawer-layout>
+      <header>
+        <h2>Welcome To xPlex</h2>
+        <p>Stream Everywhere</p>
+      </header>
+
+    </app-header-layout>
+
   </template>
 
   <script>
     Polymer({
-      is: 'xplex-me',
+      is: 'xplex-me'
+    });
 
-      properties: {
-        page: {
-          type: String,
-          reflectToAttribute: true,
-          observer: '_pageChanged',
-        },
-      },
-
-      observers: [
-        '_routePageChanged(routeData.page)',
-      ],
-
-      _routePageChanged: function(page) {
-        this.page = page || 'user';
-
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
-      },
-
-      _pageChanged: function(page) {
-        // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('xplex-' + page + '.html');
-        this.importHref(resolvedPageUrl, null, this._showPage404, true);
-      },
-
-      _showPage404: function() {
-        this.page = '404';
-      },
+    document.addEventListener('DOMContentLoaded', function () {
+      // Do stuff here
     });
   </script>
+
 </dom-module>
