@@ -52,6 +52,10 @@
         background-color: #eee;
         color: #444;
       }
+      .brand {
+        font-family: 'Unica One', 'Roboto', 'Noto', sans-serif;
+        font-weight: 100;
+      }
       #title {
         font-size: 28px;
       }
@@ -78,15 +82,14 @@
         text-align: center;
       }
       header > h1 {
-        font-size: 64px;
-        font-weight: 300;
+        font-size: 128px;
         margin: 0;
       }
       header > p {
         font-size: 32px;
       }
-      section {
-        padding: 88px 16px;
+      header .applink {
+        font-size: 24px;
       }
     </style>
 
@@ -97,7 +100,7 @@
       <app-drawer id="drawer" swipe-open>
         <div class="drawer-contents">
           <a class="paper-item-link" href="/" tabindex="-1">
-            <paper-item><strong>xPlex</strong></paper-item>
+            <paper-item><strong>xplex</strong></paper-item>
           </a>
           <a class="paper-item-link" href="/about" tabindex="-1">
             <paper-item>About</paper-item>
@@ -120,7 +123,7 @@
             <template is="dom-if" if="{{!notNarrow}}">
               <paper-icon-button icon="menu" on-tap="_onTap"></paper-icon-button>
             </template>
-            <div id="title" is-wide$="{{notNarrow}}" main-title>xPlex</div>
+            <div id="title" class="brand" is-wide$="{{notNarrow}}" main-title>xplex</div>
 
               <div class="tabs">
                 <template is="dom-if" if="{{notNarrow}}">
@@ -140,8 +143,13 @@
         </app-header>
 
         <header>
-          <h1>xPlex</h1>
+          <h1 class="brand">xplex</h1>
           <p>Stream Everywhere</p>
+          <a href="https://app.xplex.me/" tabindex="-1">
+            <paper-button raised class="applink">
+              Go Live Now
+            </paper-button>
+          </a>
         </header>
 
       </app-header-layout>
