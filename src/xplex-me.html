@@ -2,12 +2,16 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
@@ -46,12 +50,23 @@
       }
       .applink {
         background-color: #eee;
-        border-radius: 0;
         color: #444;
       }
+      #title {
+        font-size: 28px;
+      }
+      #title[is-wide] {
+        margin-left: 32px;
+      }
       app-header-layout {
+        /* Image Courtesy: https://www.flickr.com/photos/thomasletholsen/6722419607/ by Thomas Leth-Olsen */
         background-image: url('./img/cover-2k.jpg');
         backgrond-repeat: no-repeat;
+      }
+      app-drawer {
+        --app-drawer-content-container: {
+          background-color: #ddd;
+        };
       }
       header {
         @apply(--layout-vertical);
@@ -62,8 +77,8 @@
         color: white;
         text-align: center;
       }
-      header > h2 {
-        font-size: 56px;
+      header > h1 {
+        font-size: 64px;
         font-weight: 300;
         margin: 0;
       }
@@ -75,38 +90,71 @@
       }
     </style>
 
-    <app-header-layout>
+    <iron-media-query query="(min-width: 600px)" query-matches="{{notNarrow}}"></iron-media-query>
 
-      <app-header reveals effects="waterfall">
+    <app-drawer-layout fullbleed force-narrow>
 
-        <app-toolbar class="toolbar">
-          <div main-title>
-            xPlex
-          </div>
-          <div class="tabs">
-            <a href="/about">About</a>
-            <a href="/pricing">Pricing</a>
-            <a href="/faq">FAQ</a>
-            <paper-button raised class="applink">
-              Go to App
-            </paper-button>
-          </div>
-        </app-toolbar>
+      <app-drawer id="drawer" swipe-open>
+        <div class="drawer-contents">
+          <a class="paper-item-link" href="/" tabindex="-1">
+            <paper-item><strong>xPlex</strong></paper-item>
+          </a>
+          <a class="paper-item-link" href="/about" tabindex="-1">
+            <paper-item>About</paper-item>
+          </a>
+          <a class="paper-item-link" href="/pricing" tabindex="-1">
+            <paper-item>Pricing</paper-item>
+          </a>
+          <a class="paper-item-link" href="/faq" tabindex="-1">
+            <paper-item>FAQ</paper-item>
+          </a>
+        </div>
+      </app-drawer>
 
-      </app-header>
+      <app-header-layout>
 
-      <header>
-        <h2>Welcome To xPlex</h2>
-        <p>Stream Everywhere</p>
-      </header>
+        <app-header fixed effects="waterfall">
 
-    </app-header-layout>
+          <app-toolbar class="toolbar">
+
+            <template is="dom-if" if="{{!notNarrow}}">
+              <paper-icon-button icon="menu" on-tap="_onTap"></paper-icon-button>
+            </template>
+            <div id="title" is-wide$="{{notNarrow}}" main-title>xPlex</div>
+
+              <div class="tabs">
+                <template is="dom-if" if="{{notNarrow}}">
+                  <a href="/about">About</a>
+                  <a href="/pricing">Pricing</a>
+                  <a href="/faq">FAQ</a>
+                </template>
+                <a href="https://app.xplex.me/" tabindex="-1">
+                  <paper-button raised class="applink">
+                    Go Live Now
+                  </paper-button>
+                </a>
+              </div>
+
+          </app-toolbar>
+
+        </app-header>
+
+        <header>
+          <h1>xPlex</h1>
+          <p>Stream Everywhere</p>
+        </header>
+
+      </app-header-layout>
+    </app-drawer-layout>
 
   </template>
 
   <script>
     Polymer({
-      is: 'xplex-me'
+      is: 'xplex-me',
+      _onTap: function () {
+        this.$.drawer.toggle();
+      }
     });
 
     document.addEventListener('DOMContentLoaded', function () {
