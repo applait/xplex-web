@@ -1,0 +1,27 @@
+{
+  "name": "xplex-web",
+  "version": "0.0.1",
+  "description": "The contents for the XpleX website",
+  "private": true,
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/applait/xplex-web"
+  },
+  "author": "Soumya Deb <debloper@gmail.com>",
+  "license": "MPL-2.0"
+}
