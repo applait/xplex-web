@@ -91,6 +91,19 @@
       header .applink {
         font-size: 24px;
       }
+      section {
+        height: 100vh;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      section p {
+        width: 60%;
+        margin: auto;
+        font-size: 1.5rem;
+        text-align: center;
+      }
     </style>
 
     <iron-media-query query="(min-width: 600px)" query-matches="{{notNarrow}}"></iron-media-query>
@@ -153,6 +166,12 @@
         </header>
 
       </app-header-layout>
+
+      <section>
+        <p>Spicy jalapeno bacon ipsum dolor amet brisket tongue biltong duis pork belly est.</p>
+        <p>Shoulder picanha doner, nulla pariatur pork loin beef ribs biltong adipisicing elit sint anim andouille in. Excepteur venison ut aute, t-bone swine jerky ut landjaeger ullamco capicola filet mignon hamburger in pastrami. Venison fatback eu, swine turkey rump eiusmod.</p>
+      </section>
+
     </app-drawer-layout>
 
   </template>
