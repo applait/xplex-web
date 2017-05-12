@@ -3,9 +3,32 @@ layout: layout.dot
 title: XpleX
 description: XpleX Homepage
 ---
+[[##intro:
+<section id="hero">
+  <h1 id="brandWordMark" class="ui center aligned icon header">
+    XpleX
+  </h1>
+  <h3 id="punchline">Stream Everywhere!</h3>
+  <div id="joinNow" class="ui action left icon input">
+    <i class="at icon"></i>
+    <input type="text">
+    <button
+      class="ui red button"
+      data-content="We'll send you an invitation!"
+      data-position="right center">
+      Join Now!
+    </button>
+  </div>
+  <p>Already have an account? Great! <a href="/login">Log In</a> here...</p>
+</section>
+<script>
+$('#joinNow .red.button').popup();
+</script>
+#]]
+[[#intro]]
 [[##content:
-<h1 class="ui center aligned icon header">
-  XpleX
-</h1>
+<section>
+  Nothing to see here, yet.
+</section>
 #]]
 [[#content]]

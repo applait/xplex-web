@@ -34,24 +34,18 @@
 
     <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/vendors/semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="/vendors/semantic/semantic.min.js"></script>
   </head>
   <body>
-    <div class="ui secondary pointing menu">
-      <a class="item">
-        XpleX
-      </a>
-      <div class="right menu">
-        <a class="ui item" href="/dashboard/">
-          Dashboard
-        </a>
-        <a class="ui item" href="/profile/">
-          Profile
-        </a>
-      </div>
-    </div>
+    [[= layout.intro || "" ]]
+    <!-- Base pre-content goes here -->
     [[= layout.content ]]
+    <!-- Base post-content goes here -->
+    [[= layout.outro || "" ]]
+    <script>
+    </script>
   </body>
 </html>
