@@ -43,9 +43,50 @@
     [[= layout.intro || "" ]]
     <!-- Base pre-content goes here -->
     [[= layout.content ]]
+
     <!-- Base post-content goes here -->
+    <footer>
+      <div class="ui three column stackable grid container">
+        <div class="four column wide">
+          <h1 class="brandName">XpleX</h1>
+        </div>
+
+        <div class="ui list four column wide">
+          <div class="item">
+            <i class="twitter icon"></i>
+            <div class="content">
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+          <div class="item">
+            <i class="facebook icon"></i>
+            <div class="content">
+              <a href="#">Facebook</a>
+            </div>
+          </div>
+          <div class="item">
+            <i class="mail icon"></i>
+            <div class="content">
+              <a href="#">Email</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui list four column wide">
+          <div class="item">
+            <a href="#">About Us</a>
+          </div>
+          <div class="item">
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="item">
+            <a href="#">Terms of Services</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
     [[= layout.outro || "" ]]
-    <script>
-    </script>
   </body>
 </html>

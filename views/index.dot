@@ -5,13 +5,13 @@ description: XpleX Homepage
 ---
 [[##intro:
 <section id="hero">
-  <h1 id="brandWordMark" class="ui center aligned icon header">
+  <h1 id="brandWordMark" class="ui center aligned icon header brandName">
     XpleX
   </h1>
-  <h3 id="punchline">Stream Everywhere!</h3>
+  <h2 id="punchline">Stream Everywhere!</h2>
   <div id="joinNow" class="ui action left icon input">
     <i class="at icon"></i>
-    <input type="text">
+    <input type="text" placeholder="your@email.id">
     <button
       class="ui red button"
       data-content="We'll send you an invitation!"
@@ -27,8 +27,175 @@ $('#joinNow .red.button').popup();
 #]]
 [[#intro]]
 [[##content:
-<section>
-  Nothing to see here, yet.
+<section id="content" class="ui container">
+
+  <div class="ui tall stacked segment info icon message">
+    <i class="lightning icon"></i>
+    <div class="content">
+      <div class="header">
+        New feature coming next up...
+      </div>
+      <p>Aesthetically different landing page for logged-in users: users will see a sleeker menu (for visiting <a href="/dashboard">Dashboard</a>, <a href="/profile">Profile</a> page etc.) instead of the welcome banner!</p>
+      <p>And as you have noticed, this place will be used for various announcements...</p>
+    </div>
+  </div>
+
+  <div id="featured">
+    <div class="ui horizontal divider">
+      <h2 class="ui header grey">Featured Streamers</h2>
+    </div>
+    <div class="ui link cards">
+      <div class="card">
+        <div class="image">
+          <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/wagamamatv-profile_image-fcc33886efd92c4f-300x300.jpeg">
+        </div>
+        <div class="content">
+          <div class="header">Wagamama</div>
+          <div class="meta">
+            <a>Dota 2</a>
+          </div>
+          <div class="description">
+            Singlehandedly destroying 5kbracket!!
+          </div>
+        </div>
+        <div class="extra content">
+          <span class="right floated">
+            Live now!
+          </span>
+          <span>
+            <i class="twitch icon"></i>
+            <i class="youtube play icon"></i>
+          </span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/purgegamers-profile_image-ed4c093db11c38c3-300x300.png">
+        </div>
+        <div class="content">
+          <div class="header">PurgeGamers</div>
+          <div class="meta">
+            <a>Dota 2</a>
+          </div>
+          <div class="description">
+            Welcome to Dota, You Suck
+          </div>
+        </div>
+        <div class="extra content">
+          <span class="right floated">
+            Offline
+          </span>
+          <span>
+            <i class="twitch icon"></i>
+            <i class="youtube play icon"></i>
+          </span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/bananaslamjamma-profile_image-8a07eac563581ffe-300x300.png">
+        </div>
+        <div class="content">
+          <div class="header">BananaSlamJamma</div>
+          <div class="meta">
+            <a>Dota 2</a>
+          </div>
+          <div class="description">
+            Keep it PMA Keep it BSJ
+          </div>
+        </div>
+        <div class="extra content">
+          <span class="right floated">
+            Live now!
+          </span>
+          <span>
+            <i class="twitch icon"></i>
+            <i class="youtube play icon"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="ui basic segment">
+      <p class="ui">Discover more streams from our <a href="#">community directory</a> or,</p>
+      <div class="ui icon input">
+        <input type="text" placeholder="Search here...">
+        <i class="search icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <div id="pricing">
+    <div class="ui horizontal divider">
+      <h2 class="ui header grey">Pricing Details</h2>
+    </div>
+    <table class="ui celled table">
+      <thead>
+        <tr>
+          <th>
+            <div class="ui huge ribbon label blue">
+              Basic &nbsp;
+              <a class="ui tag big label black">Free!</a>
+            </div>
+          </th>
+          <th>
+            <div class="ui huge ribbon label green">
+              Pro &nbsp;
+              <a class="ui tag big label black">$10/month</a>
+            </div>
+          </th>
+          <th>
+            <div class="ui huge ribbon label red">
+              Corp &nbsp;
+              <a class="ui tag big label black">Contact us</a>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Features
+          </td>
+          <td>
+            Features
+          </td>
+          <td>
+            Features
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Features
+          </td>
+          <td>
+            Features
+          </td>
+          <td>
+            Features
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Features
+          </td>
+          <td>
+            Features
+          </td>
+          <td>
+            Features
+          </td>
+        </tr>
+      </tbody>
+        <tfoot>
+          <tr class="positive">
+            <th colspan="3" class="green inverted">
+              Sign up now and start streaming across platforms!
+            </th>
+          </tr>
+        </tfoot>
+    </table>
+  </div>
+
 </section>
 #]]
 [[#content]]

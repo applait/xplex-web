@@ -1,3 +1,15 @@
+body {
+  background: #eee;
+}
+
+#content {
+  padding: 2rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #hero {
   color: #fff;
   min-height: 40rem;
@@ -11,11 +23,13 @@
   align-items: center;
 }
 
+.brandName {
+  color: #fff !important;
+  font-family: "Unica One" !important;
+}
 #brandWordMark {
-  color: #fff;
   margin: 0;
-  font-family: "Unica One";
-  font-size: 5rem;
+  font-size: 7rem;
 }
 
 #punchline {
@@ -24,4 +38,43 @@
 
 #joinNow {
   margin: 2rem auto 1rem;
+}
+
+#featured {
+  padding: 3rem 0;
+}
+
+#featured .ui.cards {
+  padding: 2rem 0;
+  justify-content: center;
+}
+
+#featured .ui.basic.segment {
+  color: #999;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.ui.table tfoot th {
+  color: #fff;
+  background: #222;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.ui.ribbon.label {
+    left: calc(-1rem - 1.1em)
+}
+
+footer {
+  color: #eee;
+  margin-top: 5rem;
+  min-height: 10rem;
+  padding-top: 2rem;
+  background: #000;
+  border-top: solid 2px #c00;
+}
+
+footer .brandName {
+  font-size: 5rem;
 }
