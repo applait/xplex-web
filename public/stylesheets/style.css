@@ -1,4 +1,5 @@
 body {
+  height:100%;
   background: #eee;
 }
 
@@ -24,11 +25,11 @@ body {
 }
 
 .brandName {
-  color: #fff !important;
   font-family: "Unica One" !important;
 }
 #brandWordMark {
   margin: 0;
+  color: #fff;
   font-size: 7rem;
 }
 
@@ -64,6 +65,30 @@ body {
 
 .ui.ribbon.label {
     left: calc(-1rem - 1.1em)
+}
+
+.login.grid {
+  height: calc(100% - 13rem); /* The footer being 13rem */
+  align-items: center;
+}
+
+.login.grid .column {
+  max-width: 480px;
+}
+
+.login h2.red.header {
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.login .brandName {
+  color: #444;
+  font-size: 5rem;
+  margin-top: 0;
+}
+
+.login .divider {
+  margin-top: 2rem;
 }
 
 footer {

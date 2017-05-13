@@ -1,0 +1,53 @@
+---
+layout: layout.dot
+title: XpleX
+description: Login to XpleX
+---
+[[##content:
+<div class="ui login middle center aligned grid">
+  <div class="column">
+    <h2 class="ui red header">Welcome to</h2>
+    <h1 class="brandName black">XpleX</h1>
+    <form class="ui large form">
+      <div class="ui stacked red segment">
+        <div class="field">
+          <div class="ui left large icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" placeholder="Account ID">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left large icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <div class="ui fluid large red submit button">Login</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui horizontal divider">
+      <h3 class="ui header grey">Don't have an account yet?</h3>
+    </div>
+
+    <div id="joinNow" class="ui fluid big left icon action input">
+      <i class="at icon"></i>
+      <input type="text" placeholder="your@email.id">
+      <button
+        class="ui red button"
+        data-content="We'll send you an invitation!"
+        data-position="right center">
+        Join Now!
+      </button>
+    </div>
+    <script>
+    $('#joinNow .red.button').popup();
+    </script>
+  </div>
+</div>
+
+#]]
+[[#content]]

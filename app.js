@@ -22,6 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
+app.use('/login', require('./routes/login'));
 app.use('/profile', require('./routes/profile'));
 app.use('/dashboard', require('./routes/dashboard'));
 
